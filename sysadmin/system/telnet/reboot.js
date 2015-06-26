@@ -9,10 +9,11 @@ var params = {
   timeout: 1500
 };
 
-var cmd = 'ls';
+var cmd = 'reboot';
 connection.on('ready', function(prompt) {
   connection.exec(cmd, function(response) {
     log.info(response); 
+    connection.end();
   });
 });
 
