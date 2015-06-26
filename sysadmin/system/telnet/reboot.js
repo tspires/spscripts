@@ -2,10 +2,14 @@
 var telnet   = require('telnet-client');
 var log      = require('npmlog');
 
+if (!process.argv.slice(2)) {
+  log.error("No hostname!");
+}
+var ip = process.argv.slice(2);
 var connection = new telnet();
 
 var params = {
-  host : '192.168.0.13',
+  host   : ip,
   timeout: 1500
 };
 
